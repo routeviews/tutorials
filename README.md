@@ -4,9 +4,8 @@
 * Development Environment
   If Docker Engine is installed, one can easily start an appropriate development environment like so:
   ```
-  docker build . && \
-  docker images \
-  | awk 'NR==2 { print $3 }' \
-  | xargs docker run -t
+  docker build .
+  docker images | awk 'NR==2 { print $3 }'
+  docker run -it <container_id> bash
   ```
   
