@@ -7,7 +7,7 @@ import time
 #Initialize BGPStream and set it's data interfaces options
 bs = BGPStream()
 bs.stream.set_data_interface('kafka')
-bs.stream.set_data_interface_option('kafka', 'brokers', 'rvdb.routeviews.org:9092')
+bs.stream.set_data_interface_option('kafka', 'brokers', 'stream.routeviews.org:9092')
 bs.stream.set_data_interface_option('kafka', 'topic', "^routeviews\.linx\..+\.bmp_raw")
 bs.set_live_mode()
 
