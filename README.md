@@ -1,7 +1,7 @@
-** Route Views Tutorials
+* Route Views Tutorials
   This is the README file for the Route Views Tutorials repository. The goal of this document is to provide some guidelines for the use of these scripts.
 
-** Development Environment
+* Development Environment
   If Docker Engine is installed, one can easily start an appropriate development environment like so:
   ```
   docker build . && \
