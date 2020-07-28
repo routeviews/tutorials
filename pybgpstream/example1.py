@@ -17,5 +17,7 @@ for rec in bs.records():
     rec_time = time.strftime('%y-%m-%d %H:%M:%S', time.localtime(rec.time))
     for elem in rec:
         
-        print(f"{elem.record_type}|{rec_time}|{elem.router}|{elem.router_ip}|{elem.peer_asn}|{elem.peer_address}|{elem._maybe_field('prefix')}|{elem._maybe_field('next_hop')}|{elem._maybe_field('as-path')}")
+        print(f"{elem.record_type}|{rec_time}|{elem.router}|{elem.router_ip}"
+              f"|{elem.peer_asn}|{elem.peer_address}|{elem._maybe_field('prefix')}"
+              f"|{elem._maybe_field('next_hop')}|{elem._maybe_field('as-path')}")
 
