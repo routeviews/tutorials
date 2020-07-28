@@ -8,14 +8,6 @@ import requests
 
 
 
-results_map = {'v4_advertise': 0,
-                'v4_withdrawl': 0,
-                'v6_advertise': 0,
-                'v6_withdrawl': 0
-                }
-
-
-
 if __name__ == '__main__':
     #Initialize BGPStream and set it's data interfaces options
     bs = BGPStream()
@@ -33,6 +25,4 @@ if __name__ == '__main__':
                     as_path = elem.fields['as-path'].split(" ")
                     #print all elements with 16509 in the path
                     if '16509' in as_path:
-                        r = request.get(f"https://api.routeviews.org/rpki?prefix={prefix}")
-                        print(r.json)
-                        print(f"peer asn: {elem.peer_asn} as path: {as_path} communities: {elem.fields['communities']}")
+                        print(f"peer asn: {elem.peer_asn} as path: {as_path} communities: {elem.fields['communities']} timestamp: {rec_time}")
