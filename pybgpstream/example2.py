@@ -10,10 +10,10 @@ import requests
 
 if __name__ == '__main__':
     #Initialize BGPStream and set it's data interfaces options
-    bs = BGPStream()
-    bs.stream.set_data_interface('kafka')
-    bs.stream.set_data_interface_option('kafka', 'brokers', 'stream.routeviews.org:9092')
-    bs.stream.set_data_interface_option('kafka', 'topic', "^routeviews\.linx\..+\.bmp_raw")
+    bs = BGPStream(
+            project="routeviews-stream",
+            filter="router amsix",
+            )
     bs.set_live_mode()
     print("starting stream...")
     while True:
